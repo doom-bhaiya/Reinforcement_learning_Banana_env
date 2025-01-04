@@ -34,6 +34,8 @@ def get_num_agents(env_info):
 
 def step(env, brain_name, action):
 
+    action = action.astype("int32")
+
     env_info = env.step(action)[brain_name]
     next_state = env_info.vector_observations[0]
     reward = env_info.rewards[0]  
